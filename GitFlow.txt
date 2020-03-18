@@ -1,0 +1,126 @@
+GitFlow - it assigns very specific roles to different branches and defines how and when they should interact
+
+Master -> Git default development branch (trunk)
+
+Git commands:
+--------------
+$ git clone -> local copy of the entire project
+$ git status -> View the state of the repo
+$ git add <some-file> -> Stage a file
+$ git commit <some-file> -> Commit a file</some-file>
+$ git push origin master
+$ git pull --rebase origin master
+
+---------
+Git-Flow |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------
+
+DEVELOP branch 
+---------------
+Instead of a single master branch, this workflow uses two branches to record the history of the project. The master branch stores the official release history, 
+and the develop branch serves as an integration branch for features. It's also convenient to tag all commits in the master branch with a version number
+
+* Create a develop branch:
+  - as normal
+     $ git branch develop
+     $ git push -u origin develop   
+  - git-flow
+     $ git flow init
+
+
+FEATURE branch
+---------------
+Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off of master
+, feature branches use develop as their parent branch. When a feature is complete, it gets merged back into develop. 
+Features should never interact directly with master.
+
+* Create a feature branch:
+  - as normal
+     $ git checkout develop
+     $ git checkout -b feature_branch   
+  - git-flow
+     $ git flow feature start feature_branch 
+  
+* Merge feature into develop branch 
+  - as normal
+     $ git checkout develop
+     $ git merge feature_branch   
+  - git-flow
+     $ git flow feature finish feature_branch
+  
+  
+RELEASE branch
+---------------
+Making release branches is another straightforward branching operation. Like feature branches, release branches are based on the develop branch. 
+A new release branch can be created using the following methods.
+
+* Create a release branch:
+  - as normal
+     $ git checkout develop
+     $ git checkout -b release/0.1.0  
+  - git-flow
+     $ it flow release start 0.1.0
+       Switched to a new branch 'release/0.1.0'	 
+
+* Finish a release branch 
+  - as normal
+     $ git checkout master
+     $ git merge release/0.1.0
+  - git-flow 
+     $ git flow release finish '0.1.0'
+
+
+HOTFIX branches
+----------------
+Maintenance or “hotfix” branches are used to quickly patch production releases. Hotfix branches are a lot like release branches and feature branches except 
+they're based on master instead of develop. This is the only branch that should fork directly off of master. As soon as the fix is complete, 
+it should be merged into both master and develop (or the current release branch), and master should be tagged with an updated version number.
+
+* Create a hotfix branch
+  - as normal
+     $ git checkout master
+     $ git checkout -b hotfix_branch
+  - git-flow 	 
+     $ git flow hotfix start <hotfix_branch>
+	 
+* Finish a hotfix branch
+  - as normal  
+     $ git checkout master
+     $ git merge hotfix_branch
+     $ git checkout develop
+     $ git merge hotfix_branch
+     $ git branch -D hotfix_Branch
+  - git-flow 	 
+     $ git flow hotfix finish <hotfix_branch>
+
+
+The overall flow of Gitflow is:
+-------------------------------
+1. A DEVELOP branch is created from master
+2. A RELEASE branch is created from develop
+3. FEATURE branches are created from develop
+4. When a feature is complete it is merged into the develop branch
+5. When the release branch is done it is merged into develop and master
+6. If an issue in master is detected a HOTFIX branch is created from master
+7. Once the hotfix is complete it is merged to both develop and master
+
+
+
+
+
+Branch manual createion
+------------------------
+$ git branch future-plans -> creates a new branch but dont pointing out to this
+$ git checkout future-plans -> switching to branch it means pointing out to the branch created
+ 
+
+	 
+   
+   
+   
+   
+   
+   
+
+  
+ 

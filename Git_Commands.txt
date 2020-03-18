@@ -1,0 +1,50 @@
+# Git
+
+Commands:  
+------------
+git init 	-> initialize a git local repository
+
+git status	-> Get the status from files and directories of the local git repository
+git add		-> Add assets to the staging area
+git commit	-> Commit assets
+git log		-> Display the commit history
+
+git revert	-> Revert changes (use -n option to dont auto-commit)
+git reset 	-> Reset changes to a previous commit point from history
+
+git branch	 -> Creates a new branch
+git checkout -> Move between branch
+
+git merge	-> on target branch, we merge the new branch, after a merge with conflict we need to resolve conflict and do the commit to complete the merge
+
+git diff	-> differences between files
+
+git remote	-> to add a remote repository like gitHub or Bitbucket example: git remote add origin REPOSITORY_URL
+
+git push	-> Upload to update changes from local repository to the remote repository
+git pull	-> Download to update changes from remote repository to local repository
+
+git clone	-> Make a copy from remote repository to local machine creating a local repository
+
+git fork 	-> Make a copy from remote respository to other remote repository
+
+
+Git Ignore File (.gitignore)
+----------------------------
+This file will ignore for versionning files/directories especified
+
+
+Git STASH
+-------------
+Git stash saves your changes temporarly to appli other changes and the return back yours.
+
+git stash save	-> When you try to do a merge from repository to local and the same file has changes on both sides, you can STASH SAVE those changes, then pull correctly 
+                   from repository and then apply STASH POP to get your local changes available again
+git stash pop	-> Retrieve your stashed changes to be re-applied
+
+
+Concepts
+-------------
+HEAD -> More recent commit on a branch
+
+
