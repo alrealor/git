@@ -28,6 +28,12 @@ git clone	-> Make a copy from remote repository to local machine creating a loca
 
 git fork 	-> Make a copy from remote respository to other remote repository
 
+- Delete remote repository branch
+ $ git push -d <remote_name> <branch_name>
+
+- Delete local branch
+ $ git branch -d <branch_name>
+
 
 Git Ignore File (.gitignore)
 ----------------------------
