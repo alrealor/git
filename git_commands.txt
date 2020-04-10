@@ -1,9 +1,17 @@
 # Git
 
+Concepts
+--------------------
+HEAD -> More recent commit on a branch
+
+
 Commands:
-------------
+--------------------
 - Initialize a git local repository
 	$ git init
+    
+- Make a copy from remote repository to local repository
+    $ git clone <REPOSITORY_URL>    
 
 - Get the status from files and directories of the local git repository
 	$ git status
@@ -17,7 +25,7 @@ Commands:
 - Upload to update changes from local repository to the remote repository
 	$ git push origin master
 	
-- Download to update changes from remote repository to local repository
+- Download and update changes from remote repository to local repository
 	$ git pull
 		
 - Display the commit history
@@ -29,44 +37,61 @@ Commands:
 - Reset changes to a previous commit point from history
 	$ git reset <commit_first_7_characters>
 
-- Create New branches
-	$ git branch <branch_name>
-		
+    
+* BRANCHES
+--------------------    
+- List all branches 
+	$ git branch -a
+    
 - List all remote branches 
 	$ git branch -r
-	
+    
+- Create New branch
+	$ git branch <branch_name>
+    
+- Create and moving to new branch
+    $ git checkout -b <BRANCH_NAME>
+
 - Move between branches
 	$ git checkout <branch_name>
 
+    
+* MERGE
+--------------------  
 
-git merge	-> on target branch, we merge the new branch, after a merge with conflict we need to resolve conflict and do the commit to complete the merge
+- In target branch, we merge the new branch, after a merge with conflict we need to resolve conflict and do the commit to complete the merge
+    $ git merge
 
-git diff	-> differences between files
+- Differences between files
+    $ git diff
 
-git remote	-> to add a remote repository like gitHub or Bitbucket example: git remote add origin REPOSITORY_URL
+    
+    
+- Add a remote repository like GitHub or Bitbucket:
+    $ git remote add origin <REPOSITORY_URL>
 	
 
-git clone	-> Make a copy from remote repository to local machine creating a local repository
-
-git fork 	-> Make a copy from remote respository to other remote repository
-
-
-Git Ignore File (.gitignore)
-----------------------------
-This file will ignore for versionning files/directories especified
+- Make a copy from remote respository to other remote repository
+    $ git fork
 
 
-Git STASH
--------------
+* GIT IGNORE FILE (.gitignore)
+-----------------------------
+- This file will ignore for versionning files/directories especified
+
+
+* STASH
+--------------------
 Git stash saves your changes temporarly to apply other changes and the return back yours.
 
-git stash save	-> When you try to do a merge from repository to local and the same file has changes on both sides, you can STASH SAVE those changes, 
-					then pull correctly from repository and then apply STASH POP to get your local changes available again
-git stash pop	-> Retrieve your stashed changes to be re-applied
+- When you try to do a merge from repository to local and the same file has changes on both sides, you can STASH SAVE those changes, 
+  then pull correctly from repository and then apply STASH POP to get your local changes available again
+    $ git stash save
+    
+- Retrieve your stashed changes to be re-applied
+    $ git stash pop
 
 
-Concepts
--------------
-HEAD -> More recent commit on a branch
+
 
 
