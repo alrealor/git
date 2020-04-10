@@ -73,11 +73,14 @@ Commands:
 
 - Make a copy from remote respository to other remote repository
     $ git fork
+	
+	
+	
+* REMOTE REPOSITORY
+-------------------
+- Show remote repository
+	$ git remote show origin
 
-
-* GIT IGNORE FILE (.gitignore)
------------------------------
-- This file will ignore for versionning files/directories especified
 
 
 * STASH
@@ -90,6 +93,12 @@ Git stash saves your changes temporarly to apply other changes and the return ba
     
 - Retrieve your stashed changes to be re-applied
     $ git stash pop
+	
+	
+	
+* GIT IGNORE FILE (.gitignore)
+-----------------------------
+- This file will ignore for versionning files/directories especified	
 
 
 
