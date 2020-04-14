@@ -36,6 +36,9 @@ Commands:
 
 - Reset changes to a previous commit point from history
 	$ git reset <commit_first_7_characters>
+	
+- Revert changes made to your working copy and not stashed.
+	$ git checkout .
 
     
 * BRANCHES
@@ -64,22 +67,19 @@ Commands:
 
 - Differences between files
     $ git diff
-
-    
-    
-- Add a remote repository like GitHub or Bitbucket:
-    $ git remote add origin <REPOSITORY_URL>
+     
 	
 
-- Make a copy from remote respository to other remote repository
-    $ git fork
-	
-	
-	
 * REMOTE REPOSITORY
 -------------------
 - Show remote repository
 	$ git remote show origin
+	
+- Add a remote repository like GitHub or Bitbucket:
+    $ git remote add origin <REPOSITORY_URL>	
+	
+- Make a copy from remote respository to other remote repository
+    $ git fork	
 
 
 
