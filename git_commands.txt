@@ -76,13 +76,13 @@ Commands:
 	$ git remote show origin
 	
 - Add a remote repository like GitHub or Bitbucket:
-    $ git remote add origin <REPO_URL> OR <REPO_BRANCH>	
+    $ git remote add origin <REPO_URL>
 	
 - Make a copy from remote respository to other remote repository
     $ git fork	
 	
 - Push a new branch on the remote repository
-	$ git push origin(<REMOTE_REPO>) <NEW_BRANCH>
+	$ git push -u origin(<REMOTE_REPO>) <NEW_BRANCH>
 	
 - Pull a remote branch
 	$ git pull origin(<REMOTE_REPO>) develop(<BRANCH>)
